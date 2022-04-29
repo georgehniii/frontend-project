@@ -186,7 +186,7 @@ function icon(day, weather){
 //radar================================================================================================================================
 function buildMap(x,y){
         let map = L.map('map').setView([x, y], 7);
-    L.tileLayer('https://tile.openweathermap.org/map/precipitation_new/7/{x}/{y}.png?appid=7ec722a8566097f7dca9ab81bc006f24',{
+    L.tileLayer('https://api.maptiler.com/maps/outdoor/{z}/{x}/{y}.png?key=NEt0RES7he4FXr3usj9i',{
     tileSize: 512,
     zoomOffset: -1,
     minZoom: 1,
@@ -197,7 +197,7 @@ function buildMap(x,y){
     //add scale---------------------------------------------------
     L.control.scale().addTo(map);
 
-}//https://api.maptiler.com/maps/outdoor/{z}/{x}/{y}.png?key=NEt0RES7he4FXr3usj9i
+}//https://tile.openweathermap.org/map/precipitation_new/7/{x}/{y}.png?appid=7ec722a8566097f7dca9ab81bc006f24
 
 // function tileLayer(z,x,y,map){
     
