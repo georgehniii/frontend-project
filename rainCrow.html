@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <p id="idea">This is my wife's idea first</p> -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
+    <script defer src="rainCrow.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <title>Rain Crow</title>
+    <script src="https://api.weather.gov"></script> 
+    <link rel="stylesheet" href="rainCrow.css"></link>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+    crossorigin=""/>
+</head>
+<body>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+        integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+        crossorigin=""></script>
+    <div id="mainContainer">
+        <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+        <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+        <div class="header">
+            
+            <h1 class="titleHeader">Rain Crow</h1>            
+            <h3 class="titleQuote">Weather as the crow flys</h3>
+        </div>
+        <div class="geocoderContainer">
+            <div id="geocoder"></div>
+            <div id="coordinates">
+                <p class="inputBoxBox">Enter latitude
+                    <input class="inputBoxBox" id="inputLatitude" value="35.4897"></input>
+                </p>
+                <p class="inputBoxBox">Enter longitude
+                    <input class="inputBoxBox" id="inputLongitude" value="-93.8242"></input>
+                </p>
+            </div>
+        </div>
+        <button id="submit">Submit</button>
+        <div class="weatherBox" id="weather1">
+            <div id="map"></div>
+        </div>
+    </div>
+</body>
+</html>
