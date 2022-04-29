@@ -193,6 +193,10 @@ function buildMap(x,y){
     attribution: "\u003ca href=\"https://www.maptiler.com/copyright/\" target=\"_blank\"\u003e\u0026copy; MapTiler\u003c/a\u003e \u003ca href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\"\u003e\u0026copy; OpenStreetMap contributors\u003c/a\u003e",
     crossOrigin: true
     }).addTo(map);
+    var layer = new L.TileLayer('https://tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png?appid=7ec722a8566097f7dca9ab81bc006f24');
+         map.addLayer(layer);
+    var layer = new L.TileLayer('https://tile.openweathermap.org/map/clouds_new/{z}/{x}/{y}.png?appid=7ec722a8566097f7dca9ab81bc006f24');
+    map.addLayer(layer);
 
     //add scale---------------------------------------------------
     L.control.scale().addTo(map);
