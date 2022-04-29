@@ -3,7 +3,11 @@
 var $inputLatitude = $("#inputLatitude");
 var $inputLongitude = $("#inputLongitude");
 var $submitButton = $("#submit");
+let weatherSearchCount = 0;
 $("#map").hide();
+
+
+
 $submitButton.on("click",function(){
     searchCtrl(false);
     var $inputLatitude = $("#inputLatitude").val();
@@ -14,6 +18,9 @@ $submitButton.on("click",function(){
         //console.log(data);
         var x = $inputLatitude;
         var y = $inputLongitude;
+        if(weatherSearchCount < 1){
+            buildMap(x,y);
+        }
         weatherOptions(data.properties,x,y);
         //console.log(data.properties.relativeLocation.properties.city);
         //console.log(data.properties.forecast);           
@@ -109,6 +116,7 @@ function searchCtrl(show){
         $("#map").hide();
     }
     if(show === false){
+        weatherSearchCount++;
         $(".cityState").show();
         $(".geocoderContainer").hide();
         $("#submit").hide();
@@ -145,10 +153,12 @@ function weatherOptions(options,x,y){
             searchCtrl(true);
             removeContainers();
         });
+    
     $("#radar").on("click",function(){
         $(".details").remove();
         removeContainers();
         buildMap(x,y);
+        //map.panTo([x, y], 7);
         $("#map").show();
         radar(x, y);
     });
@@ -172,27 +182,26 @@ function icon(day, weather){
         return "images/rainbow.png";
     }
 }
-
+            //BIG WORK IN PROGRESS!!!!!!!!!!!
 //radar================================================================================================================================
 function buildMap(x,y){
-    let map = L.map('map').setView([x, y], 7);
-    L.tileLayer(`https://tile.openweathermap.org/map/precipitation_new/7/${x}/${y}.png?appid=7ec722a8566097f7dca9ab81bc006f24`,{
-        // tileSize: 512,
-        // zoomOffset: -1,
-        // minZoom: 1,
-        attribution: "\u003ca href=\"https://www.maptiler.com/copyright/\" target=\"_blank\"\u003e\u0026copy; MapTiler\u003c/a\u003e \u003ca href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\"\u003e\u0026copy; OpenStreetMap contributors\u003c/a\u003e",
-        crossOrigin: true
-        }).addTo(map);
-    
-    L.imageOver
+        let map = L.map('map').setView([x, y], 7);
+    L.tileLayer('https://tile.openweathermap.org/map/precipitation_new/7/{x}/{y}.png?appid=7ec722a8566097f7dca9ab81bc006f24',{
+    tileSize: 512,
+    zoomOffset: -1,
+    minZoom: 1,
+    attribution: "\u003ca href=\"https://www.maptiler.com/copyright/\" target=\"_blank\"\u003e\u0026copy; MapTiler\u003c/a\u003e \u003ca href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\"\u003e\u0026copy; OpenStreetMap contributors\u003c/a\u003e",
+    crossOrigin: true
+    }).addTo(map);
+
     //add scale---------------------------------------------------
     L.control.scale().addTo(map);
 
-}//https://api.maptiler.com/maps/outdoor/{${z}}/{${x}}/{${y}}.png?key=NEt0RES7he4FXr3usj9i
+}//https://api.maptiler.com/maps/outdoor/{z}/{x}/{y}.png?key=NEt0RES7he4FXr3usj9i
 
 // function tileLayer(z,x,y,map){
     
-
+    //add layers;
 // }
 //https://tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png?appid={API key}
 
