@@ -75,7 +75,9 @@ body {
     float: left;
 }
 #map { 
-    height: 680px;
+    height: 75vh;
+    width: 95vw;
+    margin-left: 2vw;
     /*
     position: absolute;
     top: 0;
