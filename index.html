@@ -28,15 +28,17 @@
             <h1 class="titleHeader">Rain Crow</h1>            
             <h3 class="titleQuote">Weather as the crow flys</h3>
         </div>
-        <div class="geocoderContainer">
-            <div id="geocoder"></div>
+        <div id="geocoder"></div>
+        <div class="geocoderContainer">           
             <div id="coordinates">
-                <p class="inputBoxBox">Enter latitude
+                <div class="coordinateFormat">
+                    <p class="inputBox">Latitude: </p>
                     <input class="inputBoxBox" id="inputLatitude" value="35.4897"></input>
-                </p>
-                <p class="inputBoxBox">Enter longitude
-                    <input class="inputBoxBox" id="inputLongitude" value="-93.8242"></input>
-                </p>
+                </div>
+                <div class="coordinateFormat">               
+                    <p class="inputBox">Longitude: </p>
+                    <input class="inputBoxBox" id="inputLongitude" value="-93.8242"></input> 
+                </div>              
             </div>
         </div>
         <button id="submit">Submit</button>

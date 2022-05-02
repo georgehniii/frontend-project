@@ -7,24 +7,45 @@
     margin: 2px;
     float: left;
     }
-.geocoderContainer {
-    background-color: #7b92ac;
+/* .geocoderContainer {
+    /* background-color: #7b92ac;  
+    height: 50px;
+ } */
+#coordinates {
+    float: left;
+    /* height: 80px;
+    width: 60px; */
 }
-.inputBoxBox {
+.coordinateFormat{
+    float: left;
+    height: 50px;
+    width: 80px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+} 
+.inputBox {
     height: 25px;
     font-size: 14px;
     margin-top: 0px;
     margin-bottom: 0px;
 }
-#inputLatitude {
-    margin-left: 11px;
-    margin-right: 7px;
+.inputBoxBox {
+    height: 25px;
+    width: 65px;
+    font-size: 14px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+/* #inputLatitude {
     height: 15px;
     width: 75px;
 }
 #inputLongitude {
     height: 15px;
     width: 75px;
+} */
+#submit {
+    margin-top: 10px;
 }
 .mapboxgl-ctrl-geocoder {
     min-width: 100%;
@@ -38,9 +59,7 @@
     margin-top: 0px;
     margin-bottom: 0px;
 }
-#coordinates {
-    float: left;
-}
+
 h1 {
     font-size: 28px;
     margin-bottom: 0px;
