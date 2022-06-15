@@ -8,3 +8,5 @@ You can check it out at this link: https://georgehniii-rain-crow.netlify.app/
 The radar section is a work in progress. It currently dosnt use an actual radar but does use weather information to give you an idea of how the weather is. The map may not load yet. Will get back to it soon.
 
 Will be updating the code to ES6 in future and cleaning it up even more.
+
+Its exciting in its own way to run into issues or get an email saying you exceeded your acounts api call requests per min. I did not expect to reach the cap of the map tiler service for their free acount but I have. It also did not take that many people. I will build in a cap to the amount of calls as to not crash it and rewrite the code to lower the amount of requests. 
