@@ -1,4 +1,4 @@
-# frontend-project
+# Rain Crow frontend-project
 If the map is not working try to minimize your screen and then expand it back it will resize the map this is the temperary work around for now. If it still does not work then to many people have used the app and locked the API key. I will be working on limiting the request calls so that it will work again after a minute or two if it is exceeded.
 
 My front end project. Its a weather app.
